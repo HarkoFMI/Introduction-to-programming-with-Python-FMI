@@ -1,6 +1,6 @@
 import unittest
 
-from main import (nums_to_text, text_to_nums, nums_to_angle, angles_to_nums, is_phone_tastic)
+from solution import (nums_to_text, text_to_nums, nums_to_angle, angles_to_nums, is_phone_tastic)
 
 
 class TestNumsToText(unittest.TestCase):
@@ -18,20 +18,22 @@ class TestNumsToText(unittest.TestCase):
                                        6, 6, -1, 6,
                                        7, 7, 7, 7, 7, 7,
                                        8,
-                                       9, 9, 9, 9, 9]), "BDGJJNMQTW")
+                                       9, 9, 9, 9, 9, 
+                                       0, 0, 0, 0, 2]).upper(), "BDGJJNMQTW A")
 
 
 class TestTextToNums(unittest.TestCase):
     """Test the text_to_nums function."""
 
     def test_text_to_num_conversion(self):
-        self.assertEqual(text_to_nums(' AadgJMPS t W Z'),
+        self.assertEqual(text_to_nums(" AadgJMPS t W Z"),
                          [0, 2, -1, 2, 3, 4, 5, 6, 7, -1, 7, 7, 7, 7, 0, 8, 0, 9, 0, 9, 9, 9, 9])
-        self.assertEqual(text_to_nums('adgJMPS t W Z '),
+        self.assertEqual(text_to_nums("adgJMPS t W Z "),
                          [2, 3, 4, 5, 6, 7, -1, 7, 7, 7, 7, 0, 8, 0, 9, 0, 9, 9, 9, 9, 0])
-        self.assertEqual(text_to_nums('adgJMPS t WZ '),
+        self.assertEqual(text_to_nums("adgJMPS t WZ "),
                          [2, 3, 4, 5, 6, 7, -1, 7, 7, 7, 7, 0, 8, 0, 9, -1, 9, 9, 9, 9, 0])
-        self.assertEqual(text_to_nums('LLL'), [5, 5, 5, -1, 5, 5, 5, -1, 5, 5, 5])
+        self.assertEqual(text_to_nums("LLL"), [5, 5, 5, -1, 5, 5, 5, -1, 5, 5, 5])
+        self.assertEqual(text_to_nums(""), [])
 
 class TestNumsToAngles(unittest.TestCase):
     """Test the nums_to_angle function."""
@@ -57,6 +59,7 @@ class TestIsPhonetastic(unittest.TestCase):
         self.assertTrue(is_phone_tastic("asl pls"))
         self.assertTrue(is_phone_tastic("  asl  pls   "))
         self.assertTrue(is_phone_tastic("LLL"))
+        self.assertFalse(is_phone_tastic(""))
 
 
 if __name__ == '__main__':
