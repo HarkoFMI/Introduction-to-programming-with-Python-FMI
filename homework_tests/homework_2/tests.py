@@ -56,7 +56,7 @@ class TestIsPhonetastic(unittest.TestCase):
 
     def test_words(self):
         self.assertTrue(is_phone_tastic('a'))
-        self.assertTrue(is_phone_tastic("asl pls"))
+        self.assertFalse(is_phone_tastic("asl pls"))
         self.assertFalse(is_phone_tastic("  asl  pls   "))
         self.assertTrue(is_phone_tastic("LLL"))
         self.assertFalse(is_phone_tastic(""))
