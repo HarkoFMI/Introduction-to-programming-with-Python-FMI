@@ -46,7 +46,7 @@ class TestAnglesToNums(unittest.TestCase):
     """Test the angles_to_nums function."""
 
     def test_angles_to_nums_conversion(self):
-        self.assertEqual(angles_to_nums([10, 389, -20, 150, 200, 0, -45]), [1, 5, 7, 10])
+        self.assertEqual(angles_to_nums([10, 389, -20, 150, 200, 0]), [1, 5, 7])
 
 
 class TestIsPhonetastic(unittest.TestCase):
