@@ -31,7 +31,7 @@ class TestTextToNums(unittest.TestCase):
                          [2, 3, 4, 5, 6, 7, -1, 7, 7, 7, 7, 0, 8, 0, 9, 0, 9, 9, 9, 9, 0])
         self.assertEqual(text_to_nums('adgJMPS t WZ '),
                          [2, 3, 4, 5, 6, 7, -1, 7, 7, 7, 7, 0, 8, 0, 9, -1, 9, 9, 9, 9, 0])
-
+        self.assertEqual(text_to_nums('LLL'), [5, 5, 5, -1, 5, 5, 5, -1, 5, 5, 5])
 
 class TestNumsToAngles(unittest.TestCase):
     """Test the nums_to_angle function."""
